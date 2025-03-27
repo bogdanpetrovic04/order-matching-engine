@@ -1,8 +1,15 @@
 cmake_minimum_required(VERSION 3.10)
-project(MyCppProject LANGUAGES CXX)
+project(OrderMatchingEngine LANGUAGES CXX)
 
+# C++ standard
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Create an executable named 'hello' from main.cpp
-add_executable(hello src/main.cpp)
+# Add the main executable
+add_executable(order_engine src/main.cpp)
+
+# Enable testing
+enable_testing()
+
+# Include tests subdirectory
+add_subdirectory(tests)

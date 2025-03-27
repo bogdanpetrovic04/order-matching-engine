@@ -1,8 +1,19 @@
-cmake_minimum_required(VERSION 3.10)
-project(MyCppProject LANGUAGES CXX)
+# tests/CMakeLists.txt
 
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
+# Find GTest (you must have it installed via Homebrew)
+find_package(GTest REQUIRED)
 
-# Create an executable named 'hello' from main.cpp
-add_executable(hello main.cpp)
+# Add the test executable
+add_executable(orderbook_tests
+    test_main.cpp
+    # Add more test files here as needed
+)
+
+# Link GTest and other required libraries
+target_link_libraries(orderbook_tests
+    GTest::GTest
+    GTest::Main
+)
+
+# Register the test with CTest
+add_test(NAME OrderBookTests COMMAND orderbook_tests)

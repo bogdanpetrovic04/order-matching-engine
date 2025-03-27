@@ -1,8 +1,0 @@
-[
-{
-  "directory": "/Users/bogdanpetrovic/Documents/probaCmake/build",
-  "command": "/usr/bin/clang++   -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -o CMakeFiles/hello.dir/src/main.cpp.o -c /Users/bogdanpetrovic/Documents/probaCmake/src/main.cpp",
-  "file": "/Users/bogdanpetrovic/Documents/probaCmake/src/main.cpp",
-  "output": "CMakeFiles/hello.dir/src/main.cpp.o"
-}
-]

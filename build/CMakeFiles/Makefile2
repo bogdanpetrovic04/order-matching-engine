@@ -54,61 +54,115 @@ RM = /opt/homebrew/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/bogdanpetrovic/Documents/probaCmake
+CMAKE_SOURCE_DIR = /Users/bogdanpetrovic/Documents/OrderMatchingEngine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/bogdanpetrovic/Documents/probaCmake/build
+CMAKE_BINARY_DIR = /Users/bogdanpetrovic/Documents/OrderMatchingEngine/build
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/hello.dir/all
+all: CMakeFiles/order_engine.dir/all
+all: tests/all
 .PHONY : all
 
 # The main recursive "codegen" target.
-codegen: CMakeFiles/hello.dir/codegen
+codegen: CMakeFiles/order_engine.dir/codegen
+codegen: tests/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
-preinstall:
+preinstall: tests/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/hello.dir/clean
+clean: CMakeFiles/order_engine.dir/clean
+clean: tests/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/hello.dir
+# Directory level rules for directory tests
+
+# Recursive "all" directory target.
+tests/all: tests/CMakeFiles/orderbook_tests.dir/all
+.PHONY : tests/all
+
+# Recursive "codegen" directory target.
+tests/codegen: tests/CMakeFiles/orderbook_tests.dir/codegen
+.PHONY : tests/codegen
+
+# Recursive "preinstall" directory target.
+tests/preinstall:
+.PHONY : tests/preinstall
+
+# Recursive "clean" directory target.
+tests/clean: tests/CMakeFiles/orderbook_tests.dir/clean
+.PHONY : tests/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/order_engine.dir
 
 # All Build rule for target.
-CMakeFiles/hello.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/bogdanpetrovic/Documents/probaCmake/build/CMakeFiles --progress-num=1,2 "Built target hello"
-.PHONY : CMakeFiles/hello.dir/all
+CMakeFiles/order_engine.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/bogdanpetrovic/Documents/OrderMatchingEngine/build/CMakeFiles --progress-num=1,2 "Built target order_engine"
+.PHONY : CMakeFiles/order_engine.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/hello.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bogdanpetrovic/Documents/probaCmake/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/hello.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bogdanpetrovic/Documents/probaCmake/build/CMakeFiles 0
-.PHONY : CMakeFiles/hello.dir/rule
+CMakeFiles/order_engine.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bogdanpetrovic/Documents/OrderMatchingEngine/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/order_engine.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bogdanpetrovic/Documents/OrderMatchingEngine/build/CMakeFiles 0
+.PHONY : CMakeFiles/order_engine.dir/rule
 
 # Convenience name for target.
-hello: CMakeFiles/hello.dir/rule
-.PHONY : hello
+order_engine: CMakeFiles/order_engine.dir/rule
+.PHONY : order_engine
 
 # codegen rule for target.
-CMakeFiles/hello.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/bogdanpetrovic/Documents/probaCmake/build/CMakeFiles --progress-num=1,2 "Finished codegen for target hello"
-.PHONY : CMakeFiles/hello.dir/codegen
+CMakeFiles/order_engine.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/bogdanpetrovic/Documents/OrderMatchingEngine/build/CMakeFiles --progress-num=1,2 "Finished codegen for target order_engine"
+.PHONY : CMakeFiles/order_engine.dir/codegen
 
 # clean rule for target.
-CMakeFiles/hello.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/clean
-.PHONY : CMakeFiles/hello.dir/clean
+CMakeFiles/order_engine.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/clean
+.PHONY : CMakeFiles/order_engine.dir/clean
+
+#=============================================================================
+# Target rules for target tests/CMakeFiles/orderbook_tests.dir
+
+# All Build rule for target.
+tests/CMakeFiles/orderbook_tests.dir/all:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/orderbook_tests.dir/build.make tests/CMakeFiles/orderbook_tests.dir/depend
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/orderbook_tests.dir/build.make tests/CMakeFiles/orderbook_tests.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/bogdanpetrovic/Documents/OrderMatchingEngine/build/CMakeFiles --progress-num=3,4 "Built target orderbook_tests"
+.PHONY : tests/CMakeFiles/orderbook_tests.dir/all
+
+# Build rule for subdir invocation for target.
+tests/CMakeFiles/orderbook_tests.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bogdanpetrovic/Documents/OrderMatchingEngine/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/orderbook_tests.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bogdanpetrovic/Documents/OrderMatchingEngine/build/CMakeFiles 0
+.PHONY : tests/CMakeFiles/orderbook_tests.dir/rule
+
+# Convenience name for target.
+orderbook_tests: tests/CMakeFiles/orderbook_tests.dir/rule
+.PHONY : orderbook_tests
+
+# codegen rule for target.
+tests/CMakeFiles/orderbook_tests.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/orderbook_tests.dir/build.make tests/CMakeFiles/orderbook_tests.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/bogdanpetrovic/Documents/OrderMatchingEngine/build/CMakeFiles --progress-num=3,4 "Finished codegen for target orderbook_tests"
+.PHONY : tests/CMakeFiles/orderbook_tests.dir/codegen
+
+# clean rule for target.
+tests/CMakeFiles/orderbook_tests.dir/clean:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/orderbook_tests.dir/build.make tests/CMakeFiles/orderbook_tests.dir/clean
+.PHONY : tests/CMakeFiles/orderbook_tests.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

@@ -57,13 +57,23 @@ RM = /opt/homebrew/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/bogdanpetrovic/Documents/probaCmake
+CMAKE_SOURCE_DIR = /Users/bogdanpetrovic/Documents/OrderMatchingEngine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/bogdanpetrovic/Documents/probaCmake/build
+CMAKE_BINARY_DIR = /Users/bogdanpetrovic/Documents/OrderMatchingEngine/build
 
 #=============================================================================
 # Targets provided globally by CMake.
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
+	/opt/homebrew/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -87,9 +97,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bogdanpetrovic/Documents/probaCmake/build/CMakeFiles /Users/bogdanpetrovic/Documents/probaCmake/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bogdanpetrovic/Documents/OrderMatchingEngine/build/CMakeFiles /Users/bogdanpetrovic/Documents/OrderMatchingEngine/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bogdanpetrovic/Documents/probaCmake/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bogdanpetrovic/Documents/OrderMatchingEngine/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -117,24 +127,37 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named hello
+# Target rules for targets named order_engine
 
 # Build rule for target.
-hello: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hello
-.PHONY : hello
+order_engine: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 order_engine
+.PHONY : order_engine
 
 # fast build rule for target.
-hello/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/build
-.PHONY : hello/fast
+order_engine/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/build
+.PHONY : order_engine/fast
+
+#=============================================================================
+# Target rules for targets named orderbook_tests
+
+# Build rule for target.
+orderbook_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 orderbook_tests
+.PHONY : orderbook_tests
+
+# fast build rule for target.
+orderbook_tests/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/orderbook_tests.dir/build.make tests/CMakeFiles/orderbook_tests.dir/build
+.PHONY : orderbook_tests/fast
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
 # target to build an object file
 src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/src/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -142,7 +165,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/src/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -150,7 +173,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/src/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 # Help Target
@@ -161,7 +184,9 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... hello"
+	@echo "... test"
+	@echo "... order_engine"
+	@echo "... orderbook_tests"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
