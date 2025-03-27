@@ -1,0 +1,3 @@
+/Users/bogdanpetrovic/Documents/probaCmake/build/CMakeFiles/hello.dir
+/Users/bogdanpetrovic/Documents/probaCmake/build/CMakeFiles/edit_cache.dir
+/Users/bogdanpetrovic/Documents/probaCmake/build/CMakeFiles/rebuild_cache.dir
