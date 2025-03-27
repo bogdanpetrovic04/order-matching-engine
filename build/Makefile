@@ -152,6 +152,30 @@ orderbook_tests/fast:
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/orderbook_tests.dir/build.make tests/CMakeFiles/orderbook_tests.dir/build
 .PHONY : orderbook_tests/fast
 
+src/OrderBook.o: src/OrderBook.cpp.o
+.PHONY : src/OrderBook.o
+
+# target to build an object file
+src/OrderBook.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/src/OrderBook.cpp.o
+.PHONY : src/OrderBook.cpp.o
+
+src/OrderBook.i: src/OrderBook.cpp.i
+.PHONY : src/OrderBook.i
+
+# target to preprocess a source file
+src/OrderBook.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/src/OrderBook.cpp.i
+.PHONY : src/OrderBook.cpp.i
+
+src/OrderBook.s: src/OrderBook.cpp.s
+.PHONY : src/OrderBook.s
+
+# target to generate assembly for a file
+src/OrderBook.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/src/OrderBook.cpp.s
+.PHONY : src/OrderBook.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -187,6 +211,9 @@ help:
 	@echo "... test"
 	@echo "... order_engine"
 	@echo "... orderbook_tests"
+	@echo "... src/OrderBook.o"
+	@echo "... src/OrderBook.i"
+	@echo "... src/OrderBook.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

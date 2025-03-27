@@ -1,19 +1,16 @@
-# tests/CMakeLists.txt
-
-# Find GTest (you must have it installed via Homebrew)
 find_package(GTest REQUIRED)
 
-# Add the test executable
 add_executable(orderbook_tests
     test_main.cpp
-    # Add more test files here as needed
+    test_orderbook.cpp
+    ${PROJECT_SOURCE_DIR}/src/OrderBook.cpp
 )
 
-# Link GTest and other required libraries
+target_include_directories(orderbook_tests PRIVATE ${PROJECT_SOURCE_DIR}/src)
+
 target_link_libraries(orderbook_tests
     GTest::GTest
     GTest::Main
 )
 
-# Register the test with CTest
 add_test(NAME OrderBookTests COMMAND orderbook_tests)
