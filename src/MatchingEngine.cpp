@@ -1,25 +1,31 @@
 #include "MatchingEngine.hpp"
 
-std::vector<Trade> MatchingEngine::processOrder (const Order& order) {
+std::vector<Trade> MatchingEngine::processOrder (Order& order) {
     std::vector<Trade> trades;
-    if ( orderBook_.getOrderCount() > 0 ) {
-        Trade trade;
-        if ( order.side == OrderSide::BUY ) {
-            trade.buyOrderId = order.id;
-            trade.sellOrderId = 42;
-            trade.price = order.price;
-            trade.quantity = order.quantity;
+    if (order.side == OrderSide::BUY) {
+        while (1) {
+            Trade trade;
+            if ( orderBook_.matchBuyOrder(order, trade) ) {
+                trades.push_back(trade);
+                if ( order.quantity == 0 ) {
+                    break;
+                }
+            }
+            else break;
         }
-        else {
-            trade.buyOrderId = 42;
-            trade.sellOrderId = order.id;
-            trade.price = order.price;
-            trade.quantity = order.quantity;
-        }
-        trades.push_back(trade);
-    }
+    } 
     else {
-        orderBook_.addOrder(order);
+        while (1) {
+            Trade trade;
+            if ( orderBook_.matchSellOrder(order, trade) ) {
+                trades.push_back(trade);
+                if ( order.quantity == 0 ) {
+                    break;
+                }
+            }
+            else break;
+        }
     }
+    orderBook_.addOrder(order);
     return trades;
 }

@@ -9,6 +9,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_executable(order_engine 
     src/main.cpp
     src/OrderBook.cpp
+    src/MatchingEngine.cpp
 )
 
 # Enable testing

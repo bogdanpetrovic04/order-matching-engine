@@ -1,14 +1,19 @@
 #pragma once
 
 #include "Order.hpp"
-#include <vector>
+#include "Trade.hpp"
+#include <map>
+#include <deque>
 
 class OrderBook {
 public:
     void addOrder(const Order& order);
-    size_t getOrderCount() const;
+    size_t getBuyOrderCount() const;
+    size_t getSellOrderCount() const;
+    bool matchBuyOrder(Order& buyOrder, Trade& trade);   
+    bool matchSellOrder(Order& buyOrder, Trade& trade);  
 
 private:
-    std::vector<Order> buyOrders_;
-    std::vector<Order> sellOrders_;
+    std::map<double,std::deque<Order>> buyOrders_;
+    std::map<double,std::deque<Order>> sellOrders_;
 };

@@ -152,6 +152,30 @@ orderbook_tests/fast:
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/orderbook_tests.dir/build.make tests/CMakeFiles/orderbook_tests.dir/build
 .PHONY : orderbook_tests/fast
 
+src/MatchingEngine.o: src/MatchingEngine.cpp.o
+.PHONY : src/MatchingEngine.o
+
+# target to build an object file
+src/MatchingEngine.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/src/MatchingEngine.cpp.o
+.PHONY : src/MatchingEngine.cpp.o
+
+src/MatchingEngine.i: src/MatchingEngine.cpp.i
+.PHONY : src/MatchingEngine.i
+
+# target to preprocess a source file
+src/MatchingEngine.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/src/MatchingEngine.cpp.i
+.PHONY : src/MatchingEngine.cpp.i
+
+src/MatchingEngine.s: src/MatchingEngine.cpp.s
+.PHONY : src/MatchingEngine.s
+
+# target to generate assembly for a file
+src/MatchingEngine.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/src/MatchingEngine.cpp.s
+.PHONY : src/MatchingEngine.cpp.s
+
 src/OrderBook.o: src/OrderBook.cpp.o
 .PHONY : src/OrderBook.o
 
@@ -211,6 +235,9 @@ help:
 	@echo "... test"
 	@echo "... order_engine"
 	@echo "... orderbook_tests"
+	@echo "... src/MatchingEngine.o"
+	@echo "... src/MatchingEngine.i"
+	@echo "... src/MatchingEngine.s"
 	@echo "... src/OrderBook.o"
 	@echo "... src/OrderBook.i"
 	@echo "... src/OrderBook.s"
