@@ -152,53 +152,53 @@ orderbook_tests/fast:
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/orderbook_tests.dir/build.make tests/CMakeFiles/orderbook_tests.dir/build
 .PHONY : orderbook_tests/fast
 
-src/MatchingEngine.o: src/MatchingEngine.cpp.o
-.PHONY : src/MatchingEngine.o
+src/core/MatchingEngine.o: src/core/MatchingEngine.cpp.o
+.PHONY : src/core/MatchingEngine.o
 
 # target to build an object file
-src/MatchingEngine.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/src/MatchingEngine.cpp.o
-.PHONY : src/MatchingEngine.cpp.o
+src/core/MatchingEngine.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/src/core/MatchingEngine.cpp.o
+.PHONY : src/core/MatchingEngine.cpp.o
 
-src/MatchingEngine.i: src/MatchingEngine.cpp.i
-.PHONY : src/MatchingEngine.i
+src/core/MatchingEngine.i: src/core/MatchingEngine.cpp.i
+.PHONY : src/core/MatchingEngine.i
 
 # target to preprocess a source file
-src/MatchingEngine.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/src/MatchingEngine.cpp.i
-.PHONY : src/MatchingEngine.cpp.i
+src/core/MatchingEngine.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/src/core/MatchingEngine.cpp.i
+.PHONY : src/core/MatchingEngine.cpp.i
 
-src/MatchingEngine.s: src/MatchingEngine.cpp.s
-.PHONY : src/MatchingEngine.s
+src/core/MatchingEngine.s: src/core/MatchingEngine.cpp.s
+.PHONY : src/core/MatchingEngine.s
 
 # target to generate assembly for a file
-src/MatchingEngine.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/src/MatchingEngine.cpp.s
-.PHONY : src/MatchingEngine.cpp.s
+src/core/MatchingEngine.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/src/core/MatchingEngine.cpp.s
+.PHONY : src/core/MatchingEngine.cpp.s
 
-src/OrderBook.o: src/OrderBook.cpp.o
-.PHONY : src/OrderBook.o
+src/core/OrderBook.o: src/core/OrderBook.cpp.o
+.PHONY : src/core/OrderBook.o
 
 # target to build an object file
-src/OrderBook.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/src/OrderBook.cpp.o
-.PHONY : src/OrderBook.cpp.o
+src/core/OrderBook.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/src/core/OrderBook.cpp.o
+.PHONY : src/core/OrderBook.cpp.o
 
-src/OrderBook.i: src/OrderBook.cpp.i
-.PHONY : src/OrderBook.i
+src/core/OrderBook.i: src/core/OrderBook.cpp.i
+.PHONY : src/core/OrderBook.i
 
 # target to preprocess a source file
-src/OrderBook.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/src/OrderBook.cpp.i
-.PHONY : src/OrderBook.cpp.i
+src/core/OrderBook.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/src/core/OrderBook.cpp.i
+.PHONY : src/core/OrderBook.cpp.i
 
-src/OrderBook.s: src/OrderBook.cpp.s
-.PHONY : src/OrderBook.s
+src/core/OrderBook.s: src/core/OrderBook.cpp.s
+.PHONY : src/core/OrderBook.s
 
 # target to generate assembly for a file
-src/OrderBook.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/src/OrderBook.cpp.s
-.PHONY : src/OrderBook.cpp.s
+src/core/OrderBook.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/src/core/OrderBook.cpp.s
+.PHONY : src/core/OrderBook.cpp.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
@@ -235,12 +235,12 @@ help:
 	@echo "... test"
 	@echo "... order_engine"
 	@echo "... orderbook_tests"
-	@echo "... src/MatchingEngine.o"
-	@echo "... src/MatchingEngine.i"
-	@echo "... src/MatchingEngine.s"
-	@echo "... src/OrderBook.o"
-	@echo "... src/OrderBook.i"
-	@echo "... src/OrderBook.s"
+	@echo "... src/core/MatchingEngine.o"
+	@echo "... src/core/MatchingEngine.i"
+	@echo "... src/core/MatchingEngine.s"
+	@echo "... src/core/OrderBook.o"
+	@echo "... src/core/OrderBook.i"
+	@echo "... src/core/OrderBook.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

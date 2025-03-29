@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "MatchingEngine.hpp"
+#include "core/MatchingEngine.hpp"
 
 // Test when order book is empty: processOrder should add the order and return no trades.
 TEST(MatchingEngineTest, NoTradeWhenOrderBookEmpty) {
