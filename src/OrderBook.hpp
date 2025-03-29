@@ -14,6 +14,6 @@ public:
     bool matchSellOrder(Order& buyOrder, Trade& trade);  
 
 private:
-    std::map<double,std::deque<Order>> buyOrders_;
+    std::map<double,std::deque<Order>, std::greater<>> buyOrders_;
     std::map<double,std::deque<Order>> sellOrders_;
 };
