@@ -1,4 +1,5 @@
 #include "MatchingEngine.hpp"
+#include <iostream>
 
 std::vector<Trade> MatchingEngine::processOrder (Order& order) {
     std::vector<Trade> trades;
@@ -28,4 +29,16 @@ std::vector<Trade> MatchingEngine::processOrder (Order& order) {
     }
     orderBook_.addOrder(order);
     return trades;
+}
+
+void MatchingEngine::run(OrderBuffer& buffer) {
+    while(true) {
+        Order order = buffer.pop();
+
+        std::vector<Trade> trades = processOrder(order);
+
+        for (Trade trade : trades) {
+            std::cout << trade.buyOrderId << ' ' << trade.sellOrderId << ' ' << trade.price << ' ' << trade.quantity << std::endl;
+        }
+    }
 }

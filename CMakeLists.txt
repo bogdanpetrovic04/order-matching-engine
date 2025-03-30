@@ -10,6 +10,7 @@ add_executable(order_engine
     src/main.cpp
     src/core/OrderBook.cpp
     src/core/MatchingEngine.cpp
+    src/concurrency/OrderBuffer.cpp
 )
 
 # Enable testing

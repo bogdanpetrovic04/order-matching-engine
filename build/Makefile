@@ -152,6 +152,30 @@ orderbook_tests/fast:
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/orderbook_tests.dir/build.make tests/CMakeFiles/orderbook_tests.dir/build
 .PHONY : orderbook_tests/fast
 
+src/concurrency/OrderBuffer.o: src/concurrency/OrderBuffer.cpp.o
+.PHONY : src/concurrency/OrderBuffer.o
+
+# target to build an object file
+src/concurrency/OrderBuffer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/src/concurrency/OrderBuffer.cpp.o
+.PHONY : src/concurrency/OrderBuffer.cpp.o
+
+src/concurrency/OrderBuffer.i: src/concurrency/OrderBuffer.cpp.i
+.PHONY : src/concurrency/OrderBuffer.i
+
+# target to preprocess a source file
+src/concurrency/OrderBuffer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/src/concurrency/OrderBuffer.cpp.i
+.PHONY : src/concurrency/OrderBuffer.cpp.i
+
+src/concurrency/OrderBuffer.s: src/concurrency/OrderBuffer.cpp.s
+.PHONY : src/concurrency/OrderBuffer.s
+
+# target to generate assembly for a file
+src/concurrency/OrderBuffer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/src/concurrency/OrderBuffer.cpp.s
+.PHONY : src/concurrency/OrderBuffer.cpp.s
+
 src/core/MatchingEngine.o: src/core/MatchingEngine.cpp.o
 .PHONY : src/core/MatchingEngine.o
 
@@ -235,6 +259,9 @@ help:
 	@echo "... test"
 	@echo "... order_engine"
 	@echo "... orderbook_tests"
+	@echo "... src/concurrency/OrderBuffer.o"
+	@echo "... src/concurrency/OrderBuffer.i"
+	@echo "... src/concurrency/OrderBuffer.s"
 	@echo "... src/core/MatchingEngine.o"
 	@echo "... src/core/MatchingEngine.i"
 	@echo "... src/core/MatchingEngine.s"
