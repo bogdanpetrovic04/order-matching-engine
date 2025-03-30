@@ -32,7 +32,7 @@ std::vector<Trade> MatchingEngine::processOrder (Order& order) {
 }
 
 void MatchingEngine::run(OrderBuffer& buffer) {
-    while(true) {
+    while(running_) {
         Order order = buffer.pop();
 
         std::vector<Trade> trades = processOrder(order);
