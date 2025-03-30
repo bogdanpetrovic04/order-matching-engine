@@ -3,6 +3,7 @@
 #include "Order.hpp"
 #include "OrderBook.hpp"
 #include "../concurrency/OrderBuffer.hpp"
+#include "../listeners/TradeListener.hpp"
 #include "Trade.hpp"
 #include <vector>
 
@@ -10,6 +11,7 @@ class MatchingEngine {
 public:
     void run(OrderBuffer& buffer);
     void stop();
+    void addTradeListener(TradeListener* listener);
 private:
     OrderBook orderBook_;
 
@@ -20,4 +22,9 @@ private:
     // Flag for the running state of the engine
     std::atomic<bool> running_ = true;
 
+    // Vector of all listeners
+    std::vector<TradeListener*> listeners_;
+
+    // Method for broadcasting trades
+    void notifyListeners(const Trade& trade);
 };

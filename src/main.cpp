@@ -1,6 +1,8 @@
 #include "core/MatchingEngine.hpp"
 #include "concurrency/OrderBuffer.hpp"
 #include "core/Order.hpp"
+#include "listeners/TradeLogger.hpp"
+#include "listeners/TradeNotifier.hpp"
 
 #include <thread>
 #include <vector>
@@ -34,6 +36,12 @@ int main() {
     OrderBuffer buffer;
     MatchingEngine engine;
 
+    // 📝 Add listeners
+    TradeLogger logger("trades.csv");
+    TradeNotifier notifier;
+    engine.addTradeListener(&logger);
+    engine.addTradeListener(&notifier);
+    
     // Start the matching engine in its own thread (the consumer)
     std::thread matchingThread([&]() {
         engine.run(buffer);  // Infinite loop for now
@@ -56,7 +64,8 @@ int main() {
     // Let the matching engine consume the remaining orders
     std::this_thread::sleep_for(std::chrono::seconds(2));
 
-    // For now, we just detach the matching thread (or manually kill the process)
+    // Graceful shutdown
+    // engine.stop();
     matchingThread.detach();
 
     return 0;

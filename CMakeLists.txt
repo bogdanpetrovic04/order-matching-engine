@@ -11,6 +11,8 @@ add_executable(order_engine
     src/core/OrderBook.cpp
     src/core/MatchingEngine.cpp
     src/concurrency/OrderBuffer.cpp
+    src/listeners/TradeLogger.cpp
+    src/listeners/TradeNotifier.cpp
 )
 
 # Enable testing

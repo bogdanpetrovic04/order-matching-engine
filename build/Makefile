@@ -224,6 +224,54 @@ src/core/OrderBook.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/src/core/OrderBook.cpp.s
 .PHONY : src/core/OrderBook.cpp.s
 
+src/listeners/TradeLogger.o: src/listeners/TradeLogger.cpp.o
+.PHONY : src/listeners/TradeLogger.o
+
+# target to build an object file
+src/listeners/TradeLogger.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/src/listeners/TradeLogger.cpp.o
+.PHONY : src/listeners/TradeLogger.cpp.o
+
+src/listeners/TradeLogger.i: src/listeners/TradeLogger.cpp.i
+.PHONY : src/listeners/TradeLogger.i
+
+# target to preprocess a source file
+src/listeners/TradeLogger.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/src/listeners/TradeLogger.cpp.i
+.PHONY : src/listeners/TradeLogger.cpp.i
+
+src/listeners/TradeLogger.s: src/listeners/TradeLogger.cpp.s
+.PHONY : src/listeners/TradeLogger.s
+
+# target to generate assembly for a file
+src/listeners/TradeLogger.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/src/listeners/TradeLogger.cpp.s
+.PHONY : src/listeners/TradeLogger.cpp.s
+
+src/listeners/TradeNotifier.o: src/listeners/TradeNotifier.cpp.o
+.PHONY : src/listeners/TradeNotifier.o
+
+# target to build an object file
+src/listeners/TradeNotifier.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/src/listeners/TradeNotifier.cpp.o
+.PHONY : src/listeners/TradeNotifier.cpp.o
+
+src/listeners/TradeNotifier.i: src/listeners/TradeNotifier.cpp.i
+.PHONY : src/listeners/TradeNotifier.i
+
+# target to preprocess a source file
+src/listeners/TradeNotifier.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/src/listeners/TradeNotifier.cpp.i
+.PHONY : src/listeners/TradeNotifier.cpp.i
+
+src/listeners/TradeNotifier.s: src/listeners/TradeNotifier.cpp.s
+.PHONY : src/listeners/TradeNotifier.s
+
+# target to generate assembly for a file
+src/listeners/TradeNotifier.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/src/listeners/TradeNotifier.cpp.s
+.PHONY : src/listeners/TradeNotifier.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -268,6 +316,12 @@ help:
 	@echo "... src/core/OrderBook.o"
 	@echo "... src/core/OrderBook.i"
 	@echo "... src/core/OrderBook.s"
+	@echo "... src/listeners/TradeLogger.o"
+	@echo "... src/listeners/TradeLogger.i"
+	@echo "... src/listeners/TradeLogger.s"
+	@echo "... src/listeners/TradeNotifier.o"
+	@echo "... src/listeners/TradeNotifier.i"
+	@echo "... src/listeners/TradeNotifier.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
