@@ -38,7 +38,10 @@ void MatchingEngine::run(OrderBuffer& buffer) {
         std::vector<Trade> trades = processOrder(order);
 
         for (Trade trade : trades) {
-            std::cout << trade.buyOrderId << ' ' << trade.sellOrderId << ' ' << trade.price << ' ' << trade.quantity << std::endl;
+            std::cout << "Buyer id: " << trade.buyOrderId << ' ' << 
+            "Seller id: " << trade.sellOrderId << ' ' << 
+            "Price: " << trade.price << ' ' << 
+            "Quantity: " << trade.quantity << '\n';
         }
     }
 }
