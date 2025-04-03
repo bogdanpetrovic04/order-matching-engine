@@ -65,12 +65,16 @@ CMAKE_BINARY_DIR = /Users/bogdanpetrovic/Documents/OrderMatchingEngine/build
 # The main recursive "all" target.
 all: CMakeFiles/order_engine.dir/all
 all: CMakeFiles/client.dir/all
+all: CMakeFiles/benchmarkSimple.dir/all
+all: CMakeFiles/benchmarkConcurrent.dir/all
 all: tests/all
 .PHONY : all
 
 # The main recursive "codegen" target.
 codegen: CMakeFiles/order_engine.dir/codegen
 codegen: CMakeFiles/client.dir/codegen
+codegen: CMakeFiles/benchmarkSimple.dir/codegen
+codegen: CMakeFiles/benchmarkConcurrent.dir/codegen
 codegen: tests/codegen
 .PHONY : codegen
 
@@ -81,6 +85,8 @@ preinstall: tests/preinstall
 # The main recursive "clean" target.
 clean: CMakeFiles/order_engine.dir/clean
 clean: CMakeFiles/client.dir/clean
+clean: CMakeFiles/benchmarkSimple.dir/clean
+clean: CMakeFiles/benchmarkConcurrent.dir/clean
 clean: tests/clean
 .PHONY : clean
 
@@ -110,7 +116,7 @@ tests/clean: tests/CMakeFiles/orderbook_tests.dir/clean
 CMakeFiles/order_engine.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/bogdanpetrovic/Documents/OrderMatchingEngine/build/CMakeFiles --progress-num=5,6,7,8,9,10,11,12,13,14 "Built target order_engine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/bogdanpetrovic/Documents/OrderMatchingEngine/build/CMakeFiles --progress-num=15,16,17,18,19,20,21,22,23,24 "Built target order_engine"
 .PHONY : CMakeFiles/order_engine.dir/all
 
 # Build rule for subdir invocation for target.
@@ -127,7 +133,7 @@ order_engine: CMakeFiles/order_engine.dir/rule
 # codegen rule for target.
 CMakeFiles/order_engine.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/bogdanpetrovic/Documents/OrderMatchingEngine/build/CMakeFiles --progress-num=5,6,7,8,9,10,11,12,13,14 "Finished codegen for target order_engine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/bogdanpetrovic/Documents/OrderMatchingEngine/build/CMakeFiles --progress-num=15,16,17,18,19,20,21,22,23,24 "Finished codegen for target order_engine"
 .PHONY : CMakeFiles/order_engine.dir/codegen
 
 # clean rule for target.
@@ -142,7 +148,7 @@ CMakeFiles/order_engine.dir/clean:
 CMakeFiles/client.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/bogdanpetrovic/Documents/OrderMatchingEngine/build/CMakeFiles --progress-num=1,2,3,4 "Built target client"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/bogdanpetrovic/Documents/OrderMatchingEngine/build/CMakeFiles --progress-num=11,12,13,14 "Built target client"
 .PHONY : CMakeFiles/client.dir/all
 
 # Build rule for subdir invocation for target.
@@ -159,7 +165,7 @@ client: CMakeFiles/client.dir/rule
 # codegen rule for target.
 CMakeFiles/client.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/bogdanpetrovic/Documents/OrderMatchingEngine/build/CMakeFiles --progress-num=1,2,3,4 "Finished codegen for target client"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/bogdanpetrovic/Documents/OrderMatchingEngine/build/CMakeFiles --progress-num=11,12,13,14 "Finished codegen for target client"
 .PHONY : CMakeFiles/client.dir/codegen
 
 # clean rule for target.
@@ -168,13 +174,77 @@ CMakeFiles/client.dir/clean:
 .PHONY : CMakeFiles/client.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/benchmarkSimple.dir
+
+# All Build rule for target.
+CMakeFiles/benchmarkSimple.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmarkSimple.dir/build.make CMakeFiles/benchmarkSimple.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmarkSimple.dir/build.make CMakeFiles/benchmarkSimple.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/bogdanpetrovic/Documents/OrderMatchingEngine/build/CMakeFiles --progress-num=6,7,8,9,10 "Built target benchmarkSimple"
+.PHONY : CMakeFiles/benchmarkSimple.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/benchmarkSimple.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bogdanpetrovic/Documents/OrderMatchingEngine/build/CMakeFiles 5
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/benchmarkSimple.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bogdanpetrovic/Documents/OrderMatchingEngine/build/CMakeFiles 0
+.PHONY : CMakeFiles/benchmarkSimple.dir/rule
+
+# Convenience name for target.
+benchmarkSimple: CMakeFiles/benchmarkSimple.dir/rule
+.PHONY : benchmarkSimple
+
+# codegen rule for target.
+CMakeFiles/benchmarkSimple.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmarkSimple.dir/build.make CMakeFiles/benchmarkSimple.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/bogdanpetrovic/Documents/OrderMatchingEngine/build/CMakeFiles --progress-num=6,7,8,9,10 "Finished codegen for target benchmarkSimple"
+.PHONY : CMakeFiles/benchmarkSimple.dir/codegen
+
+# clean rule for target.
+CMakeFiles/benchmarkSimple.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmarkSimple.dir/build.make CMakeFiles/benchmarkSimple.dir/clean
+.PHONY : CMakeFiles/benchmarkSimple.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/benchmarkConcurrent.dir
+
+# All Build rule for target.
+CMakeFiles/benchmarkConcurrent.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmarkConcurrent.dir/build.make CMakeFiles/benchmarkConcurrent.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmarkConcurrent.dir/build.make CMakeFiles/benchmarkConcurrent.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/bogdanpetrovic/Documents/OrderMatchingEngine/build/CMakeFiles --progress-num=1,2,3,4,5 "Built target benchmarkConcurrent"
+.PHONY : CMakeFiles/benchmarkConcurrent.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/benchmarkConcurrent.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bogdanpetrovic/Documents/OrderMatchingEngine/build/CMakeFiles 5
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/benchmarkConcurrent.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bogdanpetrovic/Documents/OrderMatchingEngine/build/CMakeFiles 0
+.PHONY : CMakeFiles/benchmarkConcurrent.dir/rule
+
+# Convenience name for target.
+benchmarkConcurrent: CMakeFiles/benchmarkConcurrent.dir/rule
+.PHONY : benchmarkConcurrent
+
+# codegen rule for target.
+CMakeFiles/benchmarkConcurrent.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmarkConcurrent.dir/build.make CMakeFiles/benchmarkConcurrent.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/bogdanpetrovic/Documents/OrderMatchingEngine/build/CMakeFiles --progress-num=1,2,3,4,5 "Finished codegen for target benchmarkConcurrent"
+.PHONY : CMakeFiles/benchmarkConcurrent.dir/codegen
+
+# clean rule for target.
+CMakeFiles/benchmarkConcurrent.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmarkConcurrent.dir/build.make CMakeFiles/benchmarkConcurrent.dir/clean
+.PHONY : CMakeFiles/benchmarkConcurrent.dir/clean
+
+#=============================================================================
 # Target rules for target tests/CMakeFiles/orderbook_tests.dir
 
 # All Build rule for target.
 tests/CMakeFiles/orderbook_tests.dir/all:
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/orderbook_tests.dir/build.make tests/CMakeFiles/orderbook_tests.dir/depend
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/orderbook_tests.dir/build.make tests/CMakeFiles/orderbook_tests.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/bogdanpetrovic/Documents/OrderMatchingEngine/build/CMakeFiles --progress-num=15,16,17,18,19,20,21 "Built target orderbook_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/bogdanpetrovic/Documents/OrderMatchingEngine/build/CMakeFiles --progress-num=25,26,27,28,29,30,31 "Built target orderbook_tests"
 .PHONY : tests/CMakeFiles/orderbook_tests.dir/all
 
 # Build rule for subdir invocation for target.
@@ -191,7 +261,7 @@ orderbook_tests: tests/CMakeFiles/orderbook_tests.dir/rule
 # codegen rule for target.
 tests/CMakeFiles/orderbook_tests.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/orderbook_tests.dir/build.make tests/CMakeFiles/orderbook_tests.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/bogdanpetrovic/Documents/OrderMatchingEngine/build/CMakeFiles --progress-num=15,16,17,18,19,20,21 "Finished codegen for target orderbook_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/bogdanpetrovic/Documents/OrderMatchingEngine/build/CMakeFiles --progress-num=25,26,27,28,29,30,31 "Finished codegen for target orderbook_tests"
 .PHONY : tests/CMakeFiles/orderbook_tests.dir/codegen
 
 # clean rule for target.

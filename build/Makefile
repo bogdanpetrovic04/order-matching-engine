@@ -153,6 +153,32 @@ client/fast:
 .PHONY : client/fast
 
 #=============================================================================
+# Target rules for targets named benchmarkSimple
+
+# Build rule for target.
+benchmarkSimple: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 benchmarkSimple
+.PHONY : benchmarkSimple
+
+# fast build rule for target.
+benchmarkSimple/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmarkSimple.dir/build.make CMakeFiles/benchmarkSimple.dir/build
+.PHONY : benchmarkSimple/fast
+
+#=============================================================================
+# Target rules for targets named benchmarkConcurrent
+
+# Build rule for target.
+benchmarkConcurrent: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 benchmarkConcurrent
+.PHONY : benchmarkConcurrent
+
+# fast build rule for target.
+benchmarkConcurrent/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmarkConcurrent.dir/build.make CMakeFiles/benchmarkConcurrent.dir/build
+.PHONY : benchmarkConcurrent/fast
+
+#=============================================================================
 # Target rules for targets named orderbook_tests
 
 # Build rule for target.
@@ -165,12 +191,62 @@ orderbook_tests/fast:
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/orderbook_tests.dir/build.make tests/CMakeFiles/orderbook_tests.dir/build
 .PHONY : orderbook_tests/fast
 
+src/benchmarking/benchmarkConcurrent.o: src/benchmarking/benchmarkConcurrent.cpp.o
+.PHONY : src/benchmarking/benchmarkConcurrent.o
+
+# target to build an object file
+src/benchmarking/benchmarkConcurrent.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmarkConcurrent.dir/build.make CMakeFiles/benchmarkConcurrent.dir/src/benchmarking/benchmarkConcurrent.cpp.o
+.PHONY : src/benchmarking/benchmarkConcurrent.cpp.o
+
+src/benchmarking/benchmarkConcurrent.i: src/benchmarking/benchmarkConcurrent.cpp.i
+.PHONY : src/benchmarking/benchmarkConcurrent.i
+
+# target to preprocess a source file
+src/benchmarking/benchmarkConcurrent.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmarkConcurrent.dir/build.make CMakeFiles/benchmarkConcurrent.dir/src/benchmarking/benchmarkConcurrent.cpp.i
+.PHONY : src/benchmarking/benchmarkConcurrent.cpp.i
+
+src/benchmarking/benchmarkConcurrent.s: src/benchmarking/benchmarkConcurrent.cpp.s
+.PHONY : src/benchmarking/benchmarkConcurrent.s
+
+# target to generate assembly for a file
+src/benchmarking/benchmarkConcurrent.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmarkConcurrent.dir/build.make CMakeFiles/benchmarkConcurrent.dir/src/benchmarking/benchmarkConcurrent.cpp.s
+.PHONY : src/benchmarking/benchmarkConcurrent.cpp.s
+
+src/benchmarking/benchmarkSimple.o: src/benchmarking/benchmarkSimple.cpp.o
+.PHONY : src/benchmarking/benchmarkSimple.o
+
+# target to build an object file
+src/benchmarking/benchmarkSimple.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmarkSimple.dir/build.make CMakeFiles/benchmarkSimple.dir/src/benchmarking/benchmarkSimple.cpp.o
+.PHONY : src/benchmarking/benchmarkSimple.cpp.o
+
+src/benchmarking/benchmarkSimple.i: src/benchmarking/benchmarkSimple.cpp.i
+.PHONY : src/benchmarking/benchmarkSimple.i
+
+# target to preprocess a source file
+src/benchmarking/benchmarkSimple.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmarkSimple.dir/build.make CMakeFiles/benchmarkSimple.dir/src/benchmarking/benchmarkSimple.cpp.i
+.PHONY : src/benchmarking/benchmarkSimple.cpp.i
+
+src/benchmarking/benchmarkSimple.s: src/benchmarking/benchmarkSimple.cpp.s
+.PHONY : src/benchmarking/benchmarkSimple.s
+
+# target to generate assembly for a file
+src/benchmarking/benchmarkSimple.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmarkSimple.dir/build.make CMakeFiles/benchmarkSimple.dir/src/benchmarking/benchmarkSimple.cpp.s
+.PHONY : src/benchmarking/benchmarkSimple.cpp.s
+
 src/concurrency/OrderBuffer.o: src/concurrency/OrderBuffer.cpp.o
 .PHONY : src/concurrency/OrderBuffer.o
 
 # target to build an object file
 src/concurrency/OrderBuffer.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/src/concurrency/OrderBuffer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmarkSimple.dir/build.make CMakeFiles/benchmarkSimple.dir/src/concurrency/OrderBuffer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmarkConcurrent.dir/build.make CMakeFiles/benchmarkConcurrent.dir/src/concurrency/OrderBuffer.cpp.o
 .PHONY : src/concurrency/OrderBuffer.cpp.o
 
 src/concurrency/OrderBuffer.i: src/concurrency/OrderBuffer.cpp.i
@@ -179,6 +255,8 @@ src/concurrency/OrderBuffer.i: src/concurrency/OrderBuffer.cpp.i
 # target to preprocess a source file
 src/concurrency/OrderBuffer.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/src/concurrency/OrderBuffer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmarkSimple.dir/build.make CMakeFiles/benchmarkSimple.dir/src/concurrency/OrderBuffer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmarkConcurrent.dir/build.make CMakeFiles/benchmarkConcurrent.dir/src/concurrency/OrderBuffer.cpp.i
 .PHONY : src/concurrency/OrderBuffer.cpp.i
 
 src/concurrency/OrderBuffer.s: src/concurrency/OrderBuffer.cpp.s
@@ -187,6 +265,8 @@ src/concurrency/OrderBuffer.s: src/concurrency/OrderBuffer.cpp.s
 # target to generate assembly for a file
 src/concurrency/OrderBuffer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/src/concurrency/OrderBuffer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmarkSimple.dir/build.make CMakeFiles/benchmarkSimple.dir/src/concurrency/OrderBuffer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmarkConcurrent.dir/build.make CMakeFiles/benchmarkConcurrent.dir/src/concurrency/OrderBuffer.cpp.s
 .PHONY : src/concurrency/OrderBuffer.cpp.s
 
 src/core/MatchingEngine.o: src/core/MatchingEngine.cpp.o
@@ -195,6 +275,8 @@ src/core/MatchingEngine.o: src/core/MatchingEngine.cpp.o
 # target to build an object file
 src/core/MatchingEngine.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/src/core/MatchingEngine.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmarkSimple.dir/build.make CMakeFiles/benchmarkSimple.dir/src/core/MatchingEngine.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmarkConcurrent.dir/build.make CMakeFiles/benchmarkConcurrent.dir/src/core/MatchingEngine.cpp.o
 .PHONY : src/core/MatchingEngine.cpp.o
 
 src/core/MatchingEngine.i: src/core/MatchingEngine.cpp.i
@@ -203,6 +285,8 @@ src/core/MatchingEngine.i: src/core/MatchingEngine.cpp.i
 # target to preprocess a source file
 src/core/MatchingEngine.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/src/core/MatchingEngine.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmarkSimple.dir/build.make CMakeFiles/benchmarkSimple.dir/src/core/MatchingEngine.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmarkConcurrent.dir/build.make CMakeFiles/benchmarkConcurrent.dir/src/core/MatchingEngine.cpp.i
 .PHONY : src/core/MatchingEngine.cpp.i
 
 src/core/MatchingEngine.s: src/core/MatchingEngine.cpp.s
@@ -211,6 +295,8 @@ src/core/MatchingEngine.s: src/core/MatchingEngine.cpp.s
 # target to generate assembly for a file
 src/core/MatchingEngine.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/src/core/MatchingEngine.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmarkSimple.dir/build.make CMakeFiles/benchmarkSimple.dir/src/core/MatchingEngine.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmarkConcurrent.dir/build.make CMakeFiles/benchmarkConcurrent.dir/src/core/MatchingEngine.cpp.s
 .PHONY : src/core/MatchingEngine.cpp.s
 
 src/core/OrderBook.o: src/core/OrderBook.cpp.o
@@ -219,6 +305,8 @@ src/core/OrderBook.o: src/core/OrderBook.cpp.o
 # target to build an object file
 src/core/OrderBook.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/src/core/OrderBook.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmarkSimple.dir/build.make CMakeFiles/benchmarkSimple.dir/src/core/OrderBook.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmarkConcurrent.dir/build.make CMakeFiles/benchmarkConcurrent.dir/src/core/OrderBook.cpp.o
 .PHONY : src/core/OrderBook.cpp.o
 
 src/core/OrderBook.i: src/core/OrderBook.cpp.i
@@ -227,6 +315,8 @@ src/core/OrderBook.i: src/core/OrderBook.cpp.i
 # target to preprocess a source file
 src/core/OrderBook.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/src/core/OrderBook.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmarkSimple.dir/build.make CMakeFiles/benchmarkSimple.dir/src/core/OrderBook.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmarkConcurrent.dir/build.make CMakeFiles/benchmarkConcurrent.dir/src/core/OrderBook.cpp.i
 .PHONY : src/core/OrderBook.cpp.i
 
 src/core/OrderBook.s: src/core/OrderBook.cpp.s
@@ -235,6 +325,8 @@ src/core/OrderBook.s: src/core/OrderBook.cpp.s
 # target to generate assembly for a file
 src/core/OrderBook.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/src/core/OrderBook.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmarkSimple.dir/build.make CMakeFiles/benchmarkSimple.dir/src/core/OrderBook.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmarkConcurrent.dir/build.make CMakeFiles/benchmarkConcurrent.dir/src/core/OrderBook.cpp.s
 .PHONY : src/core/OrderBook.cpp.s
 
 src/listeners/TradeLogger.o: src/listeners/TradeLogger.cpp.o
@@ -420,9 +512,17 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... benchmarkConcurrent"
+	@echo "... benchmarkSimple"
 	@echo "... client"
 	@echo "... order_engine"
 	@echo "... orderbook_tests"
+	@echo "... src/benchmarking/benchmarkConcurrent.o"
+	@echo "... src/benchmarking/benchmarkConcurrent.i"
+	@echo "... src/benchmarking/benchmarkConcurrent.s"
+	@echo "... src/benchmarking/benchmarkSimple.o"
+	@echo "... src/benchmarking/benchmarkSimple.i"
+	@echo "... src/benchmarking/benchmarkSimple.s"
 	@echo "... src/concurrency/OrderBuffer.o"
 	@echo "... src/concurrency/OrderBuffer.i"
 	@echo "... src/concurrency/OrderBuffer.s"

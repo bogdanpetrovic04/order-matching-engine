@@ -25,6 +25,22 @@ add_executable(client
     src/networking/OrderSerializer.cpp
 )
 
+# Add the simple benchmark executable
+add_executable(benchmarkSimple
+    src/benchmarking/benchmarkSimple.cpp
+    src/core/OrderBook.cpp
+    src/core/MatchingEngine.cpp
+    src/concurrency/OrderBuffer.cpp
+)
+
+# Add the concurrent benchmark executable
+add_executable(benchmarkConcurrent
+    src/benchmarking/benchmarkConcurrent.cpp
+    src/core/OrderBook.cpp
+    src/core/MatchingEngine.cpp
+    src/concurrency/OrderBuffer.cpp
+)
+
 # Enable testing
 enable_testing()
 
