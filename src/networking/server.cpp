@@ -65,6 +65,10 @@ void TcpServer::handleClient(int client_sock) {
 
         auto maybeOrder = OrderSerializer::deserialize(msg);
         if (maybeOrder.has_value()) {
+            {
+                std::lock_guard<std::mutex> lock(orders_mutex_);
+                ordersToSockets[maybeOrder.value().id] = client_sock;
+            }
             buffer_.push(maybeOrder.value());
         } else {
             std::cerr << "[Invalid Order] " << msg << "\n";
@@ -77,4 +81,11 @@ void TcpServer::handleClient(int client_sock) {
         std::cout<< "Client disconnected on " << client_sock << std::endl;
         clients_.erase(std::remove(clients_.begin(), clients_.end(), client_sock), clients_.end());
     }
+}
+
+std::optional<int> TcpServer::getSocketForOrder(int orderId) {
+    std::lock_guard<std::mutex> lock(orders_mutex_);
+    auto it = ordersToSockets.find(orderId);
+    if (it != ordersToSockets.end()) return it->second;
+    return std::nullopt;
 }

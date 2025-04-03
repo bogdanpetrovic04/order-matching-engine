@@ -14,13 +14,17 @@ public:
     void run(uint16_t port);
     void shutdown();
 
+    std::optional<int> getSocketForOrder(int orderId);
+
 private:
     void acceptLoop(uint16_t port);
     void handleClient(int client_sock);
 
     OrderBuffer& buffer_;
     std::vector<int> clients_;
+    std::unordered_map<int,int> ordersToSockets;
     std::mutex clients_mutex_;
+    std::mutex orders_mutex_;
     std::atomic<bool> running_;
     int server_fd_ = -1;
 };

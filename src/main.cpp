@@ -32,7 +32,7 @@ int main() {
 
     // Attach listeners
     TradeLogger logger("trades.csv");
-    TradeNotifier notifier;
+    TradeNotifier notifier(server);
     engine.addTradeListener(&logger);
     engine.addTradeListener(&notifier);
 
