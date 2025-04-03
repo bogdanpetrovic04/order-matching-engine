@@ -116,14 +116,38 @@ CMakeLists.txt
 README.md
 ```
 
+## Performance Benchmark
+
+### Simple Benchmark
+
+The engine was benchmarked on a MacBook Air M4 with the following results:
+
+| Orders     | Time     | Throughput        |
+|------------|----------|-------------------|
+| 100k       | 42 ms    | 2.38M orders/sec  |
+| 1M         | 220 ms   | 4.54M orders/sec  |
+| 10M        | 1.52 s   | 6.56M orders/sec  |
+| 100M       | 19.77 s  | 5.05M orders/sec  |
+
+Benchmark uses randomly generated LIMIT orders (BUY/SELL), single-threaded matching, and a shared thread-safe buffer between producers and the engine.
+
+Run benchmarks with:
+
+```bash
+./benchmarkSimple
+```
+
+### Concurrent Benchmark
+
+Threaded benchmarks show slightly lower throughput due to mutex contention in the shared order buffer. Future versions may use lock-free data structures to improve parallel ingestion.
+
 ## Future Improvements
 
-- Graceful shutdown handling (SIGINT)
 - Symbol-aware order books and matching
 - Order cancellation support
 - REST or WebSocket client interface
 - Enhanced client session handling
-- Performance profiling and benchmarking
+- Lock-free queue buffer
 
 ## Author
 
