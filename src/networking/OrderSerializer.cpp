@@ -25,8 +25,8 @@ std::optional<Order> OrderSerializer::deserialize(const std::string& message) {
     while (std::getline(iss, token, ',')) {
         tokens.push_back(token);
     }
-    std::cout<<"msg: " << message << std::endl;
-    std::cout<< tokens.size() << ' ';for (auto u : tokens) std::cout<<u<<' '; std::cout << std::endl;
+    // std::cout<<"msg: " << message << std::endl;
+    // std::cout<< tokens.size() << ' ';for (auto u : tokens) std::cout<<u<<' '; std::cout << std::endl;
     if (tokens.size() != 6) return std::nullopt;
 
     Order order;
