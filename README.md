@@ -135,11 +135,26 @@ Run benchmarks with:
 
 ```bash
 ./benchmarkSimple
+./benchmarkConcurrent
 ```
 
 ### Concurrent Benchmark
 
 Threaded benchmarks show slightly lower throughput due to mutex contention in the shared order buffer. Future versions may use lock-free data structures to improve parallel ingestion.
+
+## Benchmark (Lock-Free Queue)
+
+After replacing the original mutex-based queue with a lock-free MPSC queue (moodycamel::ConcurrentQueue), throughput improved significantly:
+
+| Orders     | Time     | Throughput           |
+|------------|----------|----------------------|
+| 100k       | 11 ms    | 9.09M orders/sec     |
+| 1M         | 41 ms    | 24.39M orders/sec    |
+| 10M        | 306 ms   | 32.68M orders/sec    |
+| 100M       | 2.75 s   | 36.42M orders/sec    |
+
+This demonstrates how eliminating contention on the shared order buffer enables the engine to scale efficiently across multiple producer threads.
+
 
 ## Future Improvements
 
@@ -147,7 +162,6 @@ Threaded benchmarks show slightly lower throughput due to mutex contention in th
 - Order cancellation support
 - REST or WebSocket client interface
 - Enhanced client session handling
-- Lock-free queue buffer
 
 ## Author
 
