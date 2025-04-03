@@ -140,6 +140,19 @@ order_engine/fast:
 .PHONY : order_engine/fast
 
 #=============================================================================
+# Target rules for targets named client
+
+# Build rule for target.
+client: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 client
+.PHONY : client
+
+# fast build rule for target.
+client/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/build
+.PHONY : client/fast
+
+#=============================================================================
 # Target rules for targets named orderbook_tests
 
 # Build rule for target.
@@ -296,6 +309,108 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/networking/OrderSerializer.o: src/networking/OrderSerializer.cpp.o
+.PHONY : src/networking/OrderSerializer.o
+
+# target to build an object file
+src/networking/OrderSerializer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/src/networking/OrderSerializer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/networking/OrderSerializer.cpp.o
+.PHONY : src/networking/OrderSerializer.cpp.o
+
+src/networking/OrderSerializer.i: src/networking/OrderSerializer.cpp.i
+.PHONY : src/networking/OrderSerializer.i
+
+# target to preprocess a source file
+src/networking/OrderSerializer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/src/networking/OrderSerializer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/networking/OrderSerializer.cpp.i
+.PHONY : src/networking/OrderSerializer.cpp.i
+
+src/networking/OrderSerializer.s: src/networking/OrderSerializer.cpp.s
+.PHONY : src/networking/OrderSerializer.s
+
+# target to generate assembly for a file
+src/networking/OrderSerializer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/src/networking/OrderSerializer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/networking/OrderSerializer.cpp.s
+.PHONY : src/networking/OrderSerializer.cpp.s
+
+src/networking/client.o: src/networking/client.cpp.o
+.PHONY : src/networking/client.o
+
+# target to build an object file
+src/networking/client.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/networking/client.cpp.o
+.PHONY : src/networking/client.cpp.o
+
+src/networking/client.i: src/networking/client.cpp.i
+.PHONY : src/networking/client.i
+
+# target to preprocess a source file
+src/networking/client.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/networking/client.cpp.i
+.PHONY : src/networking/client.cpp.i
+
+src/networking/client.s: src/networking/client.cpp.s
+.PHONY : src/networking/client.s
+
+# target to generate assembly for a file
+src/networking/client.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/networking/client.cpp.s
+.PHONY : src/networking/client.cpp.s
+
+src/networking/common.o: src/networking/common.cpp.o
+.PHONY : src/networking/common.o
+
+# target to build an object file
+src/networking/common.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/src/networking/common.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/networking/common.cpp.o
+.PHONY : src/networking/common.cpp.o
+
+src/networking/common.i: src/networking/common.cpp.i
+.PHONY : src/networking/common.i
+
+# target to preprocess a source file
+src/networking/common.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/src/networking/common.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/networking/common.cpp.i
+.PHONY : src/networking/common.cpp.i
+
+src/networking/common.s: src/networking/common.cpp.s
+.PHONY : src/networking/common.s
+
+# target to generate assembly for a file
+src/networking/common.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/src/networking/common.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/networking/common.cpp.s
+.PHONY : src/networking/common.cpp.s
+
+src/networking/server.o: src/networking/server.cpp.o
+.PHONY : src/networking/server.o
+
+# target to build an object file
+src/networking/server.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/src/networking/server.cpp.o
+.PHONY : src/networking/server.cpp.o
+
+src/networking/server.i: src/networking/server.cpp.i
+.PHONY : src/networking/server.i
+
+# target to preprocess a source file
+src/networking/server.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/src/networking/server.cpp.i
+.PHONY : src/networking/server.cpp.i
+
+src/networking/server.s: src/networking/server.cpp.s
+.PHONY : src/networking/server.s
+
+# target to generate assembly for a file
+src/networking/server.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/src/networking/server.cpp.s
+.PHONY : src/networking/server.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -305,6 +420,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... client"
 	@echo "... order_engine"
 	@echo "... orderbook_tests"
 	@echo "... src/concurrency/OrderBuffer.o"
@@ -325,6 +441,18 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/networking/OrderSerializer.o"
+	@echo "... src/networking/OrderSerializer.i"
+	@echo "... src/networking/OrderSerializer.s"
+	@echo "... src/networking/client.o"
+	@echo "... src/networking/client.i"
+	@echo "... src/networking/client.s"
+	@echo "... src/networking/common.o"
+	@echo "... src/networking/common.i"
+	@echo "... src/networking/common.s"
+	@echo "... src/networking/server.o"
+	@echo "... src/networking/server.i"
+	@echo "... src/networking/server.s"
 .PHONY : help
 
 

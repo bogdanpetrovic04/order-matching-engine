@@ -13,6 +13,16 @@ add_executable(order_engine
     src/concurrency/OrderBuffer.cpp
     src/listeners/TradeLogger.cpp
     src/listeners/TradeNotifier.cpp
+    src/networking/common.cpp
+    src/networking/OrderSerializer.cpp
+    src/networking/server.cpp
+)
+
+# Add the client executable
+add_executable(client 
+    src/networking/client.cpp
+    src/networking/common.cpp
+    src/networking/OrderSerializer.cpp
 )
 
 # Enable testing
