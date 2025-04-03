@@ -1,5 +1,6 @@
 #include "core/MatchingEngine.hpp"
 #include "concurrency/OrderBuffer.hpp"
+#include "concurrency/LockFreeOrderBuffer.hpp"
 #include "core/Order.hpp"
 #include "listeners/TradeLogger.hpp"
 #include "listeners/TradeNotifier.hpp"
@@ -26,7 +27,7 @@ int main() {
     std::signal(SIGTERM, signalHandler);
 
     // Core components
-    OrderBuffer buffer;
+    LockFreeOrderBuffer buffer;
     MatchingEngine engine;
     TcpServer server(buffer);
 

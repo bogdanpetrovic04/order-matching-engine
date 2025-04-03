@@ -11,6 +11,7 @@ add_executable(order_engine
     src/core/OrderBook.cpp
     src/core/MatchingEngine.cpp
     src/concurrency/OrderBuffer.cpp
+    src/concurrency/LockFreeOrderBuffer.cpp
     src/listeners/TradeLogger.cpp
     src/listeners/TradeNotifier.cpp
     src/networking/common.cpp
@@ -31,6 +32,7 @@ add_executable(benchmarkSimple
     src/core/OrderBook.cpp
     src/core/MatchingEngine.cpp
     src/concurrency/OrderBuffer.cpp
+    src/concurrency/LockFreeOrderBuffer.cpp
 )
 
 # Add the concurrent benchmark executable
@@ -39,6 +41,7 @@ add_executable(benchmarkConcurrent
     src/core/OrderBook.cpp
     src/core/MatchingEngine.cpp
     src/concurrency/OrderBuffer.cpp
+    src/concurrency/LockFreeOrderBuffer.cpp
 )
 
 # Enable testing

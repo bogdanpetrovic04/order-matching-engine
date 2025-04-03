@@ -1,6 +1,7 @@
 #include <gtest/gtest.h>
 #include <thread>
 #include "concurrency/OrderBuffer.hpp"
+#include "concurrency/LockFreeOrderBuffer.hpp"
 
 TEST(OrderBufferTest, PushPopSingleThread) {
     OrderBuffer buffer;

@@ -31,11 +31,13 @@ std::vector<Trade> MatchingEngine::processOrder (Order& order) {
     return trades;
 }
 
-void MatchingEngine::run(OrderBuffer& buffer) {
+void MatchingEngine::run(LockFreeOrderBuffer& buffer) {
     while(running_) {
-        Order order = buffer.pop();
-
-        std::vector<Trade> trades = processOrder(order);
+        auto maybeOrder = buffer.pop();
+        std::vector<Trade> trades;
+        if (maybeOrder.has_value()) {
+            trades = processOrder(maybeOrder.value());
+        }
 
         for (Trade trade : trades) {
             notifyListeners(trade);

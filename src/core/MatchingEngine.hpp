@@ -3,13 +3,14 @@
 #include "Order.hpp"
 #include "OrderBook.hpp"
 #include "../concurrency/OrderBuffer.hpp"
+#include "../concurrency/LockFreeOrderBuffer.hpp"
 #include "../listeners/TradeListener.hpp"
 #include "Trade.hpp"
 #include <vector>
 
 class MatchingEngine {
 public:
-    void run(OrderBuffer& buffer);
+    void run(LockFreeOrderBuffer& buffer);
     void stop();
     void addTradeListener(TradeListener* listener);
 private:

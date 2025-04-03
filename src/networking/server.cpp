@@ -6,7 +6,7 @@
 #include <cstring>
 #include <algorithm>
 
-TcpServer::TcpServer(OrderBuffer& buffer)
+TcpServer::TcpServer(LockFreeOrderBuffer& buffer)
     : buffer_(buffer), running_(true) {}
 
 TcpServer::~TcpServer() {

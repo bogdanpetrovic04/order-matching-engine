@@ -239,6 +239,36 @@ src/benchmarking/benchmarkSimple.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmarkSimple.dir/build.make CMakeFiles/benchmarkSimple.dir/src/benchmarking/benchmarkSimple.cpp.s
 .PHONY : src/benchmarking/benchmarkSimple.cpp.s
 
+src/concurrency/LockFreeOrderBuffer.o: src/concurrency/LockFreeOrderBuffer.cpp.o
+.PHONY : src/concurrency/LockFreeOrderBuffer.o
+
+# target to build an object file
+src/concurrency/LockFreeOrderBuffer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/src/concurrency/LockFreeOrderBuffer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmarkSimple.dir/build.make CMakeFiles/benchmarkSimple.dir/src/concurrency/LockFreeOrderBuffer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmarkConcurrent.dir/build.make CMakeFiles/benchmarkConcurrent.dir/src/concurrency/LockFreeOrderBuffer.cpp.o
+.PHONY : src/concurrency/LockFreeOrderBuffer.cpp.o
+
+src/concurrency/LockFreeOrderBuffer.i: src/concurrency/LockFreeOrderBuffer.cpp.i
+.PHONY : src/concurrency/LockFreeOrderBuffer.i
+
+# target to preprocess a source file
+src/concurrency/LockFreeOrderBuffer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/src/concurrency/LockFreeOrderBuffer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmarkSimple.dir/build.make CMakeFiles/benchmarkSimple.dir/src/concurrency/LockFreeOrderBuffer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmarkConcurrent.dir/build.make CMakeFiles/benchmarkConcurrent.dir/src/concurrency/LockFreeOrderBuffer.cpp.i
+.PHONY : src/concurrency/LockFreeOrderBuffer.cpp.i
+
+src/concurrency/LockFreeOrderBuffer.s: src/concurrency/LockFreeOrderBuffer.cpp.s
+.PHONY : src/concurrency/LockFreeOrderBuffer.s
+
+# target to generate assembly for a file
+src/concurrency/LockFreeOrderBuffer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/order_engine.dir/build.make CMakeFiles/order_engine.dir/src/concurrency/LockFreeOrderBuffer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmarkSimple.dir/build.make CMakeFiles/benchmarkSimple.dir/src/concurrency/LockFreeOrderBuffer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmarkConcurrent.dir/build.make CMakeFiles/benchmarkConcurrent.dir/src/concurrency/LockFreeOrderBuffer.cpp.s
+.PHONY : src/concurrency/LockFreeOrderBuffer.cpp.s
+
 src/concurrency/OrderBuffer.o: src/concurrency/OrderBuffer.cpp.o
 .PHONY : src/concurrency/OrderBuffer.o
 
@@ -523,6 +553,9 @@ help:
 	@echo "... src/benchmarking/benchmarkSimple.o"
 	@echo "... src/benchmarking/benchmarkSimple.i"
 	@echo "... src/benchmarking/benchmarkSimple.s"
+	@echo "... src/concurrency/LockFreeOrderBuffer.o"
+	@echo "... src/concurrency/LockFreeOrderBuffer.i"
+	@echo "... src/concurrency/LockFreeOrderBuffer.s"
 	@echo "... src/concurrency/OrderBuffer.o"
 	@echo "... src/concurrency/OrderBuffer.i"
 	@echo "... src/concurrency/OrderBuffer.s"

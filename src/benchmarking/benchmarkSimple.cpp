@@ -1,5 +1,6 @@
 #include "../core/MatchingEngine.hpp"
 #include "../concurrency/OrderBuffer.hpp"
+#include "../concurrency/LockFreeOrderBuffer.hpp"
 #include "../core/Order.hpp"
 
 #include <thread>
@@ -11,7 +12,7 @@
 int main() {
     const int NUM_ORDERS = 100000000;
 
-    OrderBuffer buffer;
+    LockFreeOrderBuffer buffer;
     MatchingEngine engine;
 
     // No listeners — we're just benchmarking the core

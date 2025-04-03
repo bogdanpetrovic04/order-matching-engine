@@ -5,10 +5,11 @@
 #include <atomic>
 #include "common.hpp"
 #include "../concurrency/OrderBuffer.hpp"
+#include "../concurrency/LockFreeOrderBuffer.hpp"
 
 class TcpServer {
 public:
-    TcpServer(OrderBuffer& buffer);
+    TcpServer(LockFreeOrderBuffer& buffer);
     ~TcpServer();
 
     void run(uint16_t port);
@@ -20,7 +21,7 @@ private:
     void acceptLoop(uint16_t port);
     void handleClient(int client_sock);
 
-    OrderBuffer& buffer_;
+    LockFreeOrderBuffer& buffer_;
     std::vector<int> clients_;
     std::unordered_map<int,int> ordersToSockets;
     std::mutex clients_mutex_;

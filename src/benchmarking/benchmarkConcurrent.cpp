@@ -1,6 +1,7 @@
 
 #include "../core/MatchingEngine.hpp"
 #include "../concurrency/OrderBuffer.hpp"
+#include "../concurrency/LockFreeOrderBuffer.hpp"
 #include "../core/Order.hpp"
 #include <chrono>
 #include <iostream>
@@ -9,11 +10,12 @@
 #include <vector>
 #include <atomic>
 #include <iomanip>
+#include <iostream>
 
 const int NUM_THREADS = 10;
-const int ORDERS_PER_THREAD = 10000000;
+const int ORDERS_PER_THREAD = 10000;
 
-void generateOrders(OrderBuffer& buffer, int startId) {
+void generateOrders(LockFreeOrderBuffer& buffer, int startId) {
     std::default_random_engine rng(std::random_device{}());
     std::uniform_real_distribution<double> priceDist(90.0, 110.0);
     std::uniform_int_distribution<int> qtyDist(1, 100);
@@ -32,7 +34,7 @@ void generateOrders(OrderBuffer& buffer, int startId) {
 }
 
 int main() {
-    OrderBuffer buffer;
+    LockFreeOrderBuffer buffer;
     MatchingEngine engine;
 
     std::thread engineThread([&]() {
