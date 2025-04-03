@@ -155,6 +155,11 @@ After replacing the original mutex-based queue with a lock-free MPSC queue (mood
 
 This demonstrates how eliminating contention on the shared order buffer enables the engine to scale efficiently across multiple producer threads.
 
+## Performance graph
+
+![image](https://github.com/user-attachments/assets/639d7d77-dcc7-4ae7-bed7-8a60e339145a)
+
+
 
 ## Future Improvements
 
