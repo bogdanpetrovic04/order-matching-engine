@@ -26,8 +26,7 @@ The system follows a decoupled, modular design:
 
 Clients connect to the server and send orders. The TCP server parses incoming orders and pushes them into a shared thread-safe buffer. A separate matching engine thread consumes orders and executes trades. Executed trades are logged to CSV and sent back to the clients via the notifier.
 
-You can refer to the architecture diagram in the repo:  
-`docs/architecture.png` (add the image to that path).
+You can refer to the architecture diagram above.
 
 ## Build Instructions
 
