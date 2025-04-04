@@ -28,4 +28,6 @@ private:
 
     // Method for broadcasting trades
     void notifyListeners(const Trade& trade);
+
+    void cancelOrder(uint64_t id);
 };

@@ -71,7 +71,7 @@ void TcpServer::handleClient(int client_sock) {
             }
             buffer_.push(maybeOrder.value());
         } else {
-            std::cerr << "[Invalid Order] " << msg << "\n";
+            std::cerr << "[Invalid Message] " << msg << "\n";
         }
     }
 

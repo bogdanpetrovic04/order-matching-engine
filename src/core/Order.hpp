@@ -4,6 +4,11 @@
 
 using Timestamp = uint64_t;  // milliseconds since epoch
 
+enum class OrderAction {
+    NEW,
+    CANCEL
+};
+
 enum class OrderSide {
     BUY,
     SELL
@@ -16,6 +21,7 @@ enum class OrderType {
 
 struct Order {
     uint64_t id;
+    OrderAction action;
     OrderSide side;
     OrderType type;
     double price;

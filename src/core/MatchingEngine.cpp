@@ -36,13 +36,22 @@ void MatchingEngine::run(LockFreeOrderBuffer& buffer) {
         auto maybeOrder = buffer.pop();
         std::vector<Trade> trades;
         if (maybeOrder.has_value()) {
-            trades = processOrder(maybeOrder.value());
+            if ( maybeOrder.value().action == OrderAction::CANCEL) {
+                cancelOrder(maybeOrder.value().id);
+            }
+            else {
+                trades = processOrder(maybeOrder.value());
+            }
         }
 
         for (Trade trade : trades) {
             notifyListeners(trade);
         }
     }
+}
+
+void MatchingEngine::cancelOrder(uint64_t id) {
+    orderBook_.cancelOrder(id);
 }
 
 void MatchingEngine::stop() {
