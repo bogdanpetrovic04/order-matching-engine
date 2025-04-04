@@ -68,13 +68,14 @@ You can run multiple client instances concurrently to simulate trading activity.
 Orders must be sent using the following CSV format, encapsulated in a length-prefixed TCP message:
 
 ```
-[id],[BUY|SELL],[LIMIT|MARKET],[price],[quantity],[timestamp]
+[NEW],[id],[BUY|SELL],[LIMIT|MARKET],[price],[quantity],[timestamp]
+[CANCEL],[id]
 ```
 
 Example:
 
 ```
-1,BUY,LIMIT,101.5,10,1711920000
+NEW,1,BUY,LIMIT,101.5,10,1711920000
 ```
 
 - `id` is a unique order ID
