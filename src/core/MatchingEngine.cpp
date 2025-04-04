@@ -4,6 +4,7 @@
 std::vector<Trade> MatchingEngine::processOrder (Order& order) {
     std::vector<Trade> trades;
     if (order.side == OrderSide::BUY) {
+        if (order.type == OrderType::MARKET) order.price = std::numeric_limits<double>::max();
         while (1) {
             Trade trade;
             if ( orderBook_.matchBuyOrder(order, trade) ) {
@@ -16,6 +17,7 @@ std::vector<Trade> MatchingEngine::processOrder (Order& order) {
         }
     } 
     else {
+        if (order.type == OrderType::MARKET) order.price = -1;
         while (1) {
             Trade trade;
             if ( orderBook_.matchSellOrder(order, trade) ) {
@@ -27,7 +29,8 @@ std::vector<Trade> MatchingEngine::processOrder (Order& order) {
             else break;
         }
     }
-    orderBook_.addOrder(order);
+    if ( order.type == OrderType::LIMIT)
+        orderBook_.addOrder(order);
     return trades;
 }
 
