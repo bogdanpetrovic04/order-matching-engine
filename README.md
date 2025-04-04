@@ -165,7 +165,6 @@ This demonstrates how eliminating contention on the shared order buffer enables 
 ## Future Improvements
 
 - Symbol-aware order books and matching
-- Order cancellation support
 - REST or WebSocket client interface
 - Enhanced client session handling
 
